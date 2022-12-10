@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = Schedule.find (params[:id])
+    @user = Schedule.find(params[:id])
   end
   
   def edit

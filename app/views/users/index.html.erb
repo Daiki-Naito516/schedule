@@ -28,8 +28,8 @@
     <th><%= user.finish %></td>
     <td><%= user.all_day %></td>
     <td><%= user.created_at.to_s(:datetime_jp) %></td>
-    <td>
-      <%= link_to "参照", user %> #:usersなら表示可能
+    <td>   
+     <%= link_to "参照", users_path %>
     </td>
    </tr>
     <% end %>
