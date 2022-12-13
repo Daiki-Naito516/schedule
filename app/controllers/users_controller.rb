@@ -22,11 +22,34 @@ class UsersController < ApplicationController
   end
   
   def edit
+    @user = Schedule.find(params[:id])
   end
   
   def update
+    @user = Schedule.find(params[:id])
+    if @user.update (params.require(:title, :start, :finish, :all_day, :content))
+      flash[:notice] = "ユーザーIDが「#{@user.id}」の情報を更新しました"
+       redirect_to :users
+    else
+       render "edit"
+    end
+  end
+
+  def destroy
+    @user = Schedule.find(params[:id])
+    @user.destroy
+    flash[:notice] = "削除しました"
+    redirect_to :users
   end
   
-  def destroy
+  def post_params
+     t.string :title
+      t.string :start
+      t.string :finish
+      t.string :all_day
+      # t.string :
+      t.text :content
+      t.datetime :start_time
+    
   end
 end

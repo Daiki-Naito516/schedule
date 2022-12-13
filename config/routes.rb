@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'schedule/hello'
-  get 'schedule/call'
-  get 'users/new'
-  post 'users/new' => 'users#create' #ここ追記、間違えてる可能性１００
-  get 'users/:id' => 'users#show'
-  # get 'users' => 'users#show'
+# get  'users/new', to: 'users#new'
   resources :users
-  # post 'users/new' , to: 'users#index'
+  # resources :schedules
+  post 'users/new' , to: 'users#create'
+  post 'users/:id/edit' , to: 'users#update'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # get "posts/new" => "posts#index"
 end
