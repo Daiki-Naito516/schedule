@@ -18,11 +18,11 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = Schedule.find(params[:id])
+    @user = Schedule.find (params[:id])
   end
   
   def edit
-    @user = Schedule.find(params[:id])
+    @user = Schedule.find (params[:id])
   end
   
   def update
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   end
   
   def post_params
-     t.string :title
+      t.string :title
       t.string :start
       t.string :finish
       t.string :all_day

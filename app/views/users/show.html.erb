@@ -18,9 +18,9 @@
   
   <tr>
     <th>終日</th>
-    <td>
-      <%= @user.all_day %>
-    </td>
+    <td><% if @user.all_day == "1" %>
+         ○
+     <% end %></td>
   </tr>
   
   <tr>
@@ -32,5 +32,8 @@
 <div>
   <ul>
     <li><%= link_to "ユーザー情報一覧に戻る", :users %></li>
+  </ul>
+  <ul>
+    <li><%= link_to"スケジュールを編集する", :edit_user %></li>
   </ul>
 </div>

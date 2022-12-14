@@ -26,14 +26,12 @@
     <td><%= user.title %></td>
     <td><%= user.start %></td>
     <td><%= user.finish %></td>
-    <td>
-     <% if user.all_day == true %>
+    <td><% if user.all_day == "1" %>
          ○
-     <% end %>
-     </td>
+     <% end %></td>
     <td><%= user.created_at.to_s(:datetime_jp) %></td>
     <td>   
-     <%= link_to"参照",  user_path(user.id), method: :get %>
+     <%= link_to"確認",  user_path(user.id), method: :get %>
     </td>
     <td>   
      <%= link_to"編集",  edit_user_path(user.id), method: :get %>
