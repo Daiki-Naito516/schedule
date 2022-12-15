@@ -18,16 +18,16 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = Schedule.find (params[:id])
+    @user = Schedule.find(params[:id])
   end
   
   def edit
-    @user = Schedule.find (params[:id])
+    @user = Schedule.find_by(id: params[:id])
   end
   
   def update
     @user = Schedule.find(params[:id])
-    if @user.update (params.require(:title, :start, :finish, :all_day, :content))
+    if @user.update (params.require(:user).permit(:title, :start, :finish, :all_day, :content))
       flash[:notice] = "ユーザーIDが「#{@user.id}」の情報を更新しました"
        redirect_to :users
     else
